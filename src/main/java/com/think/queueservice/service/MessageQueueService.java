@@ -15,6 +15,7 @@ public class MessageQueueService {
 	private Queue queue;
 	
 	public void saveMessage(String message) {
+		System.out.println("Sending message...");
 		rabbitTemplate.convertAndSend(queue.getName(), message);
 	}
 

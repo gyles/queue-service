@@ -16,12 +16,12 @@ import com.think.queueservice.service.Receiver;
 @Configuration
 public class MessageQueueConfiguration {
 	
-	@Value("${spring.application.queue.name}")
+	@Value("${spring.rabbitmq.queuename}")
     private String queueName;
 	
 	@Bean
     public Queue queue() {
-        return new Queue(queueName, false);
+        return new Queue(queueName, true);
     }
 	
 	@Bean
